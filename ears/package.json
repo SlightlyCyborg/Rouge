@@ -1,0 +1,11 @@
+{
+  "name": "dagney_rouge_taggart",
+  "version": "1.0.0",
+  "description": "a personal friend, made up of modules both hard and soft",
+  "author": "Collin Alexander Bell Taggart",
+  "dependencies": {
+    "express": "^4.13.3",
+    "request": "2.64.0",
+    "multer": "1.0.5",
+  }
+}
