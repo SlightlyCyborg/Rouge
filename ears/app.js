@@ -5,6 +5,7 @@ var path = require('path');
 var multer = require('multer');
 var upload = multer({ dest: '../media/' })
 var translator = require('../auditory_lobe/audio_to_text.js');
+var temporal_lobe = require('../temporal_lobe/app.js');
 
 
 var sys = require('sys')
@@ -29,15 +30,10 @@ app.post('/audio', upload.single('wav'), function(req, res){
     console.log(req.file.path);
     exec('sox ' + req.file.path + ' -r 16k ' + req.file.path + '.wav');
     translator.speech_to_text(req.file.path + ".wav", function(words){
-        understand(words);
+        temporal_lobe.understand(words);
     });
     //res.send('good');
 });
 
 app.listen(3000);
 
-function understand(words){
-    if(words.indexOf("favorite book") > -1 ){
-        require('./atlas_shrugged.js');
-    }
-}

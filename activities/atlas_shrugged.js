@@ -1,6 +1,6 @@
 var fs = require("fs")
 
-var atlas_shrugged = fs.readFileSync("atlas_shrugged.txt", 'utf-8');
+var atlas_shrugged = fs.readFileSync("./media/atlas_shrugged.txt", 'utf-8');
 
 var exec = require('child_process').exec,
         child;
