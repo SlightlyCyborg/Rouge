@@ -31,8 +31,8 @@ app.post('/audio', upload.single('wav'), function(req, res){
     exec('sox ' + req.file.path + ' -r 16k ' + req.file.path + '.wav');
     translator.speech_to_text(req.file.path + ".wav", function(words){
         temporal_lobe.understand(words);
+        res.send(words);
     });
-    //res.send('good');
 });
 
 app.listen(3000);

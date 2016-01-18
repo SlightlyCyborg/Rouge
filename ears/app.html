@@ -94,6 +94,8 @@
             contentType: false 
         }).done(function(data) {
             console.log(data);
+            $("#what-it-heard ul").append(
+            "<li>" + data + "</li>");
         });
     });
   }
@@ -118,5 +120,8 @@
   </script>
 
   <script src="recorder.js"></script>
+
+
+  <div id="what-it-heard"><ul></ul></div> 
 </body>
 </html>
