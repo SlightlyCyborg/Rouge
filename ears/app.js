@@ -35,5 +35,6 @@ app.post('/audio', upload.single('wav'), function(req, res){
     });
 });
 
-app.listen(3000);
+console.log("listening from ears");
+app.listen(4001);
 
